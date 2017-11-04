@@ -1,0 +1,29 @@
+{
+	    "update_url": "",
+	    "name": "Earn.gg Gambling Script",
+	    "description": "Martingale script for Earn.gg Ported By Ross Watkins/Neeko Original code by joshverd",
+	    "version": "0.45",
+	    "manifest_version": 2,
+	    "icons": {
+	        "128": "/img/icon128.png"
+	    },
+	    "permissions": ["storage", "tabs", "http://*/", "https://*/"],
+	    "web_accessible_resources": ["/html/roll.html", "/js/rollInject.js"],
+	    "browser_action": {
+	        "default_icon": "/img/icon128.png"
+	    },
+	    "content_scripts": [{
+	        "run_at": "document_end",
+	        "matches": ["https://earn.gg/*"],
+	        "js": ["/js/jquery.js", "/js/pageInject.js"]
+	    }],
+	    "background": {
+	        "scripts": ["/js/background.js"]
+	    },
+		"content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+	    "applications": {
+	        "gecko": {
+	            "id": "nahbhleckdghbgpndkblppbgndinhmhj@chrome-store-foxified-2708058743"
+	        }
+	    }
+	}

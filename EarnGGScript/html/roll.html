@@ -1,0 +1,154 @@
+<html>
+	 
+	<script src="jquery-3.2.1.min.js"></script>
+	 
+	<head>
+	    <title>Joshverd's Martingale Script for Earn.gg</title>
+	    <script src="/js/jquery.js"></script>
+	    <script src="/js/module.js"></script>
+	</head>
+	 
+	<body class="center">
+	  <main>
+	    <h1 class="hidden" id="title">Loading...</h1>
+	    <!--Auth Settings-->
+	    <div id="authentication" class="hidden">
+	        <label class="grey" for="key">
+	            <h3>Key</h3>
+	        </label>
+	        <input id="key" type="text" maxlength="50" placeholder="Login to earn.gg"></input>
+	        <label class="grey" for="secret">
+	            <h3>Secret</h3>
+	        </label>
+	        <input id="secret" type="text" maxlength="50" placeholder="and then refresh this page"></input>
+	        <br>
+	        <button id="loginButton">Login</button>
+	        <p id="error" class="hidden"></p>
+	    </div>
+	    <!--Roll Settings-->
+	    <div id="roll" class="hidden">
+	        <label class="grey" for="betSpeed">
+	            <h3>Bet Speed</h3>
+	        </label>
+	        <select id="betSpeed">
+	            <option value="1">1 bet/sec</option>
+	            <option value="2">2 bets/sec</option>
+	            <option value="3">3 bets/sec</option>
+	            <option value="4">4 bets/sec</option>
+	            <option value="5">5 bets/sec</option>
+	        </select>
+	        <label class="grey" for="betMulti">
+	            <h3>Bet Multiplier</h3>
+	        </label>
+	        <select id="betMulti">
+	            <option value="2">2x</option>
+	            <option value="3">3x</option>
+	            <option value="4">4x</option>
+	            <option value="5">5x</option>
+	            <option value="6">6x</option>
+	            <option value="7">7x</option>
+	            <option value="8">8x</option>
+	            <option value="9">9x</option>
+	        </select>
+	        <label class="grey" for="baseBet">
+	            <h3>Base Bet</h3>
+	        </label>
+	        <input value="10" id="baseBet" type="number" maxlength="50"></input>
+	        <label class="grey" for="maxLosses">
+	            <h3>Max Losses</h3>
+	        </label>
+	        <input value="9999" id="maxLosses" type="number" maxlength="10"></input>
+	        <label class="grey" for="minBal">
+	            <h3>Minimum Balance</h3>
+	        </label>
+	        <input value="10" id="minBal" type="number" maxlength="50"></input>
+	        <label class="grey" for="maxBal">
+	            <h3>Maximum Balance</h3>
+	        </label>
+	        <input value="9999999" id="maxBal" type="number" maxlength="50"></input>
+	 
+	        <br>
+	        <button id="startRolling">Start Rolling</button>
+	        <button class="hidden" id="stopRolling">Stop Rolling</button>
+	    </div>
+	    <div id="stats" class="hidden">
+	      <h2 class="grey" id="current"></h2>
+	      <h2 class="grey" id="total"></h2>
+	      <h2 class="grey" id="wins"></h2>
+	      <h2 class="grey" id="losses"></h2>
+	      <h2 class="grey" id="startingBalance"></h2>
+	      <h2 class="grey" id="ratio"></h2>
+	  </div>
+	</main>
+	<footer>
+	  <div class="container">
+	    <h5 class="center">Created by <a href="https://joshverd.com" target="_blank">Joshverd</a> - Bugs/Requests email Joshverd2@gmail.com - Donate <a href="https://earn.gg/donate/116542527622482562152" target="_blank">on Earn.gg</a></h5>
+	  </div>
+	</footer>
+	    <style>
+	        body {
+	          display: flex;
+	          min-height: 100vh;
+	          flex-direction: column;
+	        }
+	        footer {
+	          font-size: 15px;
+	          color: #78858F;
+	        }
+	        main {
+	          flex: 1 0 auto;
+	        }
+	        a {
+	          color: inherit;
+	        }
+	        h3 {
+	            margin: 0;
+	        }
+	        body {
+	            background-color: #E1E8ED;
+	        }
+	        .center {
+	          text-align: center;
+	        }
+	        .hidden {
+	            display: none;
+	        }
+	        .grey {
+	          color: #78858F;
+	        }
+	        input, select{
+	            width: 50%;
+	            max-width: 250px;
+	            font-size: 20px;
+	        }
+	        #title {
+	          color: #6C6A9B;
+	        }
+	        #loginButton, #startRolling, #stopRolling {
+	            background-color: #A382D4;
+	            color: white;
+	            margin-top: 5px;
+	            border: 2px solid #A382D4;
+	            border-radius: 5px;
+	            width: 55%;
+	            max-width: 200px;
+	            font-size: 30px;
+	        }
+	        #loginButton:focus, #startRolling:focus, #stopRollings:focus {
+	            outline: none;
+	        }
+	        #loginButton:hover, #startRolling:hover, #stopRolling:hover {
+	            background-color: #9D7AD1;
+	            border-color: #9D7AD1;
+	            cursor: pointer;
+	        }
+	        #title {
+	            margin: 0;
+	        }
+	        #error {
+	          color: #ffee58;
+	        }
+	    </style>
+	</body>
+	 
+	</html>
